@@ -116,3 +116,15 @@ header img{
     width: 100%;
     height: auto;
 }
+#contact_methods{
+    margin-bottom: 40px;
+}
+#contact_methods a{
+    display: inline-block;
+    margin: 0 15px;
+    color: #059cd1;
+    font-size: 2em;
+}
+#contact_methods a:hover{
+    color: #3a3a3a;
+}
