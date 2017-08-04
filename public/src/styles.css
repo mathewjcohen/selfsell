@@ -55,20 +55,18 @@ nav li{
 }
 
 header, section{
-    /* display: block; */
-    position: relative;
+    display: block;
     margin: 0 auto;
     margin-top: 130px;
     min-height: 200px;
-    width: calc(60% - 80px);
+    width: calc(70% - 80px);
     background: #fff;
-    /* box-shadow: 5px 5px 2px #222; */
     padding: 40px;
     text-align: center;
 }
 header{
     font-size: 1.25em;
-    width: calc(60% - 160px);
+    width: calc(70% - 160px);
     padding: 40px 80px;
 }
 section{
@@ -90,15 +88,16 @@ header img{
 .skill_container{
     display: inline-block;
     vertical-align: top;
-    width: calc(16% - 34px);
-    margin-right: 20px;
+    width: calc(16% - 14px);
+     margin-right: 10px; 
 }
 .skill_header{
+    
     background: #059cd1;
     padding: 10px 10px;
     color: #fff;
 }
-.skill_container:last-child{
+.last{
     margin-right: 0;
 }
 #project_container{
@@ -127,4 +126,10 @@ header img{
 }
 #contact_methods a:hover{
     color: #3a3a3a;
+}
+
+@media screen and (max-width: 1120px) {
+    .skill_container{
+        width: calc(33% - 14px);
+    }
 }
