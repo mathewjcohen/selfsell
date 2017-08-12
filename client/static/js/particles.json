@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 75
+      "value": 200
     },
     "color": {
       "value": "#fff"
@@ -10,7 +10,7 @@
       "type": "circle"
     },
     "opacity": {
-      "value": 0.1
+      "value": 0.05
     },
     "size": {
       "value": 5,
@@ -28,10 +28,24 @@
     },
     "line_linked": {
       "enable": true,
-      "distance": 300,
+      "distance": 200,
       "color": "#fff",
       "opacity": 0.25,
       "width": 1
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      }
+    },
+    "modes": {
+      "push": {
+        "particles_nb": 4
+      }
     }
   }
 }

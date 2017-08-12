@@ -31,7 +31,8 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 70%;
+    margin: 0 auto;
     z-index: 2;
 }
 nav{
@@ -175,7 +176,7 @@ header img{
         display: inline-block;
     }
     nav{
-        position: relative;
+        position: fixed;
         display: block;
         width: 94%;
         height: auto;
@@ -184,7 +185,10 @@ header img{
     header, section{
         width: 94%;
         padding: 3%;
-        margin-top: 20px;
+        margin-top: 10%;
+    }
+    header{
+        margin-top: 20%;
     }
     .skill_container{
         width: calc(50% - 14px);
