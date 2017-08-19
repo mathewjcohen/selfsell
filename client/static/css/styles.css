@@ -99,16 +99,22 @@ header img{
     margin: 0 20px;
 }
 .title{
+    display: block;
+    width: 100%;
     text-align: center;
     font-size: 2em;
     margin: 0 0 5% 0; 
 }
-
+.title_alt{
+    margin: 0;
+}
+#skills_flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
 .skill_container{
-    display: inline-block;
-    vertical-align: top;
-    width: calc(16% - 14px);
-    margin-right: 10px; 
+    flex-basis: 16%;
 }
 .skill_header{
     background: #059cd1;
@@ -116,10 +122,37 @@ header img{
     color: #fff;
     border: 0px;
 }
-.skill_container p{
+.skill_hover{
     border: 1px solid #cdcdcd;
     border-top: 0px;
     padding-bottom: 10px;
+    cursor: default;
+    -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+/* skill rollovers */
+.skill_hover:hover{
+    background-color: rgba(255,255,255,1);
+    padding-top: 10px;
+}
+/* The white hover effect */
+.ease {
+	width: 0px;
+	height: auto;
+	background-color: white;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+/* Make visable when hover */
+.skill_hover:hover .ease{
+	width: 100%;
+	max-width: 500px;
+	background-color: white;
+	border: 0;
 }
 .last{
     margin-right: 0;
@@ -139,6 +172,17 @@ header img{
     width: 100%;
     height: auto;
     box-shadow: 2px 2px 5px #9f9f9f;
+    -webkit-transition: .15s ease;
+	-moz-transition: .15s ease;
+	-ms-transition: .15s ease;
+	transition: .15s ease;
+}
+.project_header:hover{
+    -webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+    box-shadow: 5px 5px 10px #777;
 }
 #contact_methods{
     margin-bottom: 40px;
@@ -200,3 +244,4 @@ header img{
         margin-bottom: 0px;
     }
 }
+

@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // navigation click move-to functionality
     $('a[href*="#"]')
         .click(function (event) {
             // On-page links
