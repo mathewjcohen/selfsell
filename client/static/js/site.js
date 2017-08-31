@@ -21,4 +21,9 @@ $(document).ready(function () {
                 }
             }
         });
+
+    $(".menu_toggle").on('click', function () {
+        $(this).toggleClass("on");
+        $("nav ul").toggleClass('hidden');
+    });
 })
