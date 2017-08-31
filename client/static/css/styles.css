@@ -238,12 +238,12 @@ header img{
 #project_container{
     margin-bottom: 40px;
 }
-#projects_wrap{
-}
 .project_wrap{
     text-align: left;
+    display: inline-block;
     vertical-align: top;
-    width: calc(49% - 4px);
+    width: calc(46% - 4px);
+    margin-right: 2%;
 }
 .project_wrap:first-child{
     margin-top: 0;
@@ -295,6 +295,17 @@ header img{
     }
     .skill_container{
         width: 33%;
+    }
+}
+@media screen and (max-width: 960px) {
+    #skills_flex{
+        display: block;
+    }
+    .skill_container{
+        width: calc(33% - 4px);
+    }
+    .project_wrap{
+        width: 100%;
     }
 }
 
