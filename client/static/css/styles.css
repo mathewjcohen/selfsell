@@ -88,39 +88,39 @@ nav span{
     background: #fff;
     margin: 6px auto;
     backface-visibility: hidden;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 nav ul.hidden {
     opacity: 0;
     margin-right: -500px;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 nav ul{
     opacity: 1;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 nav ul.hidden a{
     opacity: 0;
-    -moz-transition-duration: .5s;
-    -o-transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    transition-duration: .5s;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 nav ul a {
     opacity: 1;
-    -moz-transition-duration: .5s;
-    -o-transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    transition-duration: .5s;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     text-decoration: none;
     color: #fff;
     font-size: 1em;
@@ -212,20 +212,20 @@ header img{
     background-color: #3a3a3a;
     color: #fff;
     padding-top: 10px;
-    -webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	transition: all 0.3s;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 /* The hover effect */
 .ease {
 	width: 0px;
 	height: auto;
 	background-color: #3a3a3a;
-	-webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 /* Make visable when hover */
 .skill_hover:hover .ease{
@@ -257,16 +257,16 @@ header img{
     width: 100%;
     height: auto;
     box-shadow: 2px 2px 5px #9f9f9f;
-    -webkit-transition: .15s ease;
-	-moz-transition: .15s ease;
-	-ms-transition: .15s ease;
-	transition: .15s ease;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
 }
 .project_header:hover{
-    -webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
     box-shadow: 5px 5px 10px #777;
 }
 #contact_methods{
@@ -277,17 +277,17 @@ header img{
     margin: 0 15px;
     color: rgba(58, 58, 58, .9);
     font-size: 2em;
-    -webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 #contact_methods a:hover{
     color: #059cd1;
-    -webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 @media screen and (max-width: 1120px) {
