@@ -151,7 +151,6 @@ header, section{
     min-height: 200px;
     width: calc(70% - 80px);
     background: rgba(255,255,255,.8);
-    /* border: 1px solid #3a3a3a; */
     padding: 40px;
     text-align: center;
 }
@@ -180,13 +179,7 @@ header img{
 .title_alt{
     margin: 0;
 }
-#skills_flex{
-    /* display: flex;
-    justify-content: space-around;
-    align-items: flex-start; */
-}
 .skill_container{
-    /* flex-basis: 16%; */
     display: inline-block;
     vertical-align: top;
     width: calc(16% - 4px);
@@ -207,7 +200,7 @@ header img{
 	-ms-transition: all 0.3s;
 	transition: all 0.3s;
 }
-/* skill rollovers */
+
 .skill_hover:hover{
     background-color: #3a3a3a;
     color: #fff;
@@ -217,7 +210,7 @@ header img{
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
-/* The hover effect */
+
 .ease {
 	width: 0px;
 	height: auto;
@@ -227,7 +220,7 @@ header img{
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
-/* Make visable when hover */
+
 .skill_hover:hover .ease{
 	width: 100%;
 	background-color: #3a3a3a;
@@ -261,7 +254,7 @@ header img{
     -moz-transition: all .15s ease-in-out;
     -o-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 .project_header:hover{
@@ -270,7 +263,7 @@ header img{
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     box-shadow: 5px 5px 10px #777;
-    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(0);
     filter: grayscale(0);
 }
 #contact_methods{
