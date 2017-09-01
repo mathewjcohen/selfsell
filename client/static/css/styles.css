@@ -261,6 +261,8 @@ header img{
     -moz-transition: all .15s ease-in-out;
     -o-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 .project_header:hover{
     -webkit-transition: all .3s ease-in-out;
@@ -268,6 +270,8 @@ header img{
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     box-shadow: 5px 5px 10px #777;
+    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
 }
 #contact_methods{
     margin-bottom: 40px;
