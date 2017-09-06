@@ -237,7 +237,7 @@ header span{
     -o-transition: all .3s;
     transition: all .3s;
 }
-img{
+.skill img{
     display: inline-block;
     max-height: 12px;
     width: auto; 
