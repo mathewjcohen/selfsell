@@ -26,4 +26,7 @@ $(document).ready(function () {
         $(this).toggleClass("on");
         $("nav ul").toggleClass('hidden');
     });
+    $("nav ul li").click( function(){
+        $(this).toggleClass("animated swing");
+    })
 })
