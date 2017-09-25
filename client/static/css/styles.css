@@ -168,8 +168,6 @@ header img{
     height: auto;
     border-radius: 50%;
     margin: 0 20px;
-}
-header img{
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
@@ -180,6 +178,10 @@ header img:hover{
     -moz-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
+}
+header p{
+    padding: 0 10%;
+    text-align: justify;
 }
 header span{
     font-style: italic;
@@ -308,6 +310,12 @@ header span{
 }
 
 @media screen and (max-width: 1120px) {
+    header p{
+        padding: 0 10%;
+    }
+    .skill_sub{
+        padding: 0 15%;
+    }
     #skills_flex{
         display: block;
     }
@@ -333,12 +341,16 @@ header span{
         width: 94%;
         padding: 3%;
         margin-top: 10%;
+        font-size: 1.5em;
     }
     header{
         margin-top: 20%;
     }
     .skill_container{
         width: calc(33% - 4px);
+    }
+    .skill_sub{
+        padding: 0 5%;
     }
     .project_wrap{
         float: left;
@@ -394,9 +406,14 @@ header span{
         width: 94%;
         padding: 3%;
         margin-top: 10%;
+        font-size: 1.1em;
     }
     header{
         margin-top: 20%;
+    }
+    header p{
+        padding: 0;
+        text-align: center;
     }
     .skill_container{
         width: calc(50% - 4px);
@@ -408,6 +425,10 @@ header span{
         float: left;
         width: 100%;
         margin-bottom: 40px;
+    }
+    .project_header{
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
     }
     #contact_methods{
         margin-bottom: 0px;
