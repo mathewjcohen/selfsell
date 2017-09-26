@@ -166,7 +166,7 @@ section{
 header img{
     width: 225px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 15%;
     margin: 0 20px;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
