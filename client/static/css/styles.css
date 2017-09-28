@@ -252,20 +252,33 @@ header span{
     margin-right: 0;
 }
 #project_container{
+    padding: 0;
     margin-bottom: 40px;
+    background: rgba(255,255,255,.8);
 }
 .project_wrap{
     text-align: left;
     display: inline-block;
     vertical-align: top;
-    width: calc(46% - 4px);
-    margin-right: 2%;
+    width: 100%;
+    padding: 3%;
+    border-bottom: 1px solid #cdcdcd;
 }
 .project_wrap:first-child{
     margin-top: 0;
 }
 .project_wrap a{
     color: rgba(58, 58, 58, .9);
+}
+.project_img_wrap{
+    float: left;
+    width: 40%;
+    margin-right: 10%;
+}
+.project_wrap:nth-child(odd) .project_img_wrap{
+    float: right;
+    margin-right: 0;
+    margin-left: 10%;
 }
 .project_header{
     display: block;
