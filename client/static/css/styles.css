@@ -73,9 +73,10 @@ nav .logo_border .logo {
   transform: rotate(-90deg);
   transition: all ease-in-out 0.5s;
 }
-nav .container {
+.container {
   display: block;
-  width: 70%;
+  width: 1240px;
+  padding: 0;
   margin: 0 auto;
 }
 /*  new nav menu */
@@ -128,25 +129,21 @@ section {
   display: block;
   margin: 0 auto;
   min-height: 200px;
-  width: 70%;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 5% 15%;
+  width: 100%;
+  padding: 5em 0;
   text-align: center;
 }
 section {
   min-height: 50px;
-  /* margin-top: 5%; */
 }
-.title {
+
+section h3 {
   display: block;
   width: 100%;
   text-align: center;
-  font-size: 2em;
-  padding: 5% 0;
-  color: #059cd1;
-}
-.title_alt {
-  margin: 0;
+  font-size: 1em;
+  padding: 2em 0;
+  color: #333;
 }
 section:nth-child(even) {
   background: #eee;
@@ -192,7 +189,7 @@ section:nth-child(even) .title {
 #hero img {
   display: inline-block;
   vertical-align: top;
-  width: calc(30% - 2px);
+  width: calc(25% - 2px);
   height: auto;
   border-radius: 2%;
   filter: saturate(150%);
@@ -211,10 +208,10 @@ section:nth-child(even) .title {
 #blurb_wrap {
   display: inline-block;
   vertical-align: top;
-  width: calc(70% - 2px);
+  width: calc(75% - 2px);
 }
 #hero p {
-  font-size: 1.55em;
+  font-size: 1.3em;
   margin-top: 0;
   padding: 0 5%;
   text-align: left;
@@ -328,7 +325,7 @@ section:nth-child(even) .title {
 }
 
 @media screen and (max-width: 1280px) {
-  nav .container {
+  .container {
     width: 90%;
     padding: 0 5%;
   }
@@ -373,27 +370,36 @@ section:nth-child(even) .title {
     font-size: 1em;
   }
 }
-@media screen and (max-width: 1280px) {
-  #hero {
-    margin-top: 15%;
-  }
-}
-@media screen and (max-width: 980px) {
-  nav .container {
+
+@media screen and (max-width: 1024px) {
+  .container {
     display: block;
-    width: 90%;
+    width: 94%;
+    padding: 0 3%;
     margin: 0 auto;
   }
   #hero,
   section {
     margin: 0 auto;
-    width: 94%;
-    padding: 0 3%;
-    margin-top: 10%;
+    width: 100%;
+    padding: 2em 0;
     font-size: 1.5em;
   }
   #hero {
-    margin-top: 20%;
+    margin-top: 2em;
+  }
+  #hero img {
+    display: block;
+    width: 35%;
+    height: auto;
+    border-radius: 2%;
+    margin: 2% auto 3% auto;
+    z-index: 2;
+    animation: heroImgSlide 1s;
+  }
+  #blurb_wrap {
+    display: block;
+    width: 100%;
   }
   #skills_flex {
     display: block;
@@ -407,21 +413,41 @@ section:nth-child(even) .title {
   #hero,
   section {
     margin: 0 auto;
-    width: 94%;
-    padding: 3%;
-    margin-top: 10%;
+    width: 100%;
     font-size: 1.5em;
+    padding: 10% 0;
   }
   #hero {
-    margin-top: 20%;
+    padding: 15% 0;
+  }
+  #hero h2 {
+    font-size: 1.75em;
   }
   #hero img {
-    display: none;
+    display: block;
+    width: 50%;
+    float: left;
+    height: auto;
+    border-radius: 2%;
+    margin: 0 2% 2% 0;
+    z-index: 2;
+    animation: heroImgSlide 1s;
+  }
+  #blurb_wrap {
+    display: block;
+    width: 100%;
+  }
+  #hero p {
+    padding: 0;
+    text-align: left;
   }
   .project_wrap {
     float: none;
     width: 100%;
     margin-bottom: 40px;
+  }
+  .skill_container {
+    width: calc(33% - 2px);
   }
 }
 
@@ -466,6 +492,9 @@ section:nth-child(even) .title {
   #hero {
     margin-top: 20%;
   }
+  #hero h2 {
+    font-size: 1.35em;
+  }
   #hero img {
     display: block;
     width: 70%;
@@ -507,6 +536,6 @@ section:nth-child(even) .title {
 
 @media screen and (max-width: 375px) {
   #hero h2 {
-    font-size: 1.25em;
+    font-size: 1.2em;
   }
 }
