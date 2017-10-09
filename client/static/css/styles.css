@@ -229,6 +229,10 @@ section:nth-child(even) .title {
 #skills_section {
   animation: skillsSlideIn 1s;
 }
+section h2{
+  padding: 0 5%;
+  color: #333;
+}
 .skill_container {
   display: inline-block;
   vertical-align: top;
@@ -363,9 +367,6 @@ section:nth-child(even) .title {
   #skills_flex {
     display: block;
   }
-  .skill_container {
-    width: 33%;
-  }
   .skill {
     font-size: 1em;
   }
@@ -407,6 +408,9 @@ section:nth-child(even) .title {
   .project_wrap {
     width: 96%;
   }
+  .skill_container {
+    width: calc(33% - 4px);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -447,7 +451,7 @@ section:nth-child(even) .title {
     margin-bottom: 40px;
   }
   .skill_container {
-    width: calc(33% - 2px);
+    width: calc(50% - 4px);
   }
 }
 
