@@ -14,21 +14,21 @@ $(document).ready(function() {
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
-        $("html, body").animate(
-          {
-            scrollTop: target.offset().top
-          },
-          500
-        );
+        $("html, body").animate({ scrollTop: target.offset().top }, 500);
       }
     }
   });
 
-  $(".menu_toggle").on("click", function() {
-    $(this).toggleClass("on");
-    $("nav ul").toggleClass("hidden");
-  });
   $("nav ul li").click(function() {
     $(this).toggleClass("animated swing");
   });
+  $("nav .logo_border").on("mouseenter", function() {
+    $("nav .logo_border").toggleClass("logo_rotate");
+    $("nav .logo").toggleClass("logo_antirotate");
+  });
+  $("nav .logo_border").on("mouseleave", function() {
+    $("nav .logo_border").toggleClass("logo_rotate");
+    $("nav .logo").toggleClass("logo_antirotate");
+  });
+  
 });
