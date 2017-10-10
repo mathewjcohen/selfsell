@@ -2,21 +2,26 @@
 /* blue = #059cd1  */
 /* lt.gray = #cdcdcd  */
 /* drk.gray1 = #333  */
-/* drk.gray2 = #111  */
+/* drk.gray2 = #333  */
 /*  */
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  font-weight: 300;
   color: #333;
   background: #fff;
   -webkit-font-smoothing: antialiased;
 }
+strong{
+  font-weight: 400;
+}
 h1,
 h2,
 h3 {
-  color: #111;
+  color: #333;
+  font-weight: 400;
 }
 h2 span {
   font-size: 0.5em;
@@ -43,12 +48,12 @@ nav {
   width: calc(100% - 40px);
   height: 55px;
   padding: 20px;
-  background: #111;
-  color: #fff;
+  color: #333;
   font-size: 2em;
   text-align: center;
   z-index: 100;
   overflow: hidden;
+  transition: all ease-in-out 0.5s;
 }
 nav .logo_wrap {
   float: left;
@@ -57,12 +62,16 @@ nav .logo_wrap {
   transition: all ease-in-out 0.5s;
 }
 nav .logo_border {
-  border: 4px solid #fff;
+  border: 4px solid #333;
   padding: 0.3rem 0.75rem;
   transition: all ease-in-out 0.5s;
 }
 nav .logo_border .logo {
-  color: #fff;
+  color: #333;
+  transition: all ease-in-out 0.5s;
+}
+.nav_bg{
+  background: rgba(255,255,255,.95);
   transition: all ease-in-out 0.5s;
 }
 .logo_rotate {
@@ -100,7 +109,7 @@ nav ul {
 nav ul a {
   opacity: 1;
   text-decoration: none;
-  color: #fff;
+  color: #333;
   font-size: 1em;
   line-height: 1.5;
   width: 100%;
@@ -130,14 +139,14 @@ section {
   margin: 0 auto;
   min-height: 200px;
   width: 100%;
-  padding: 5em 0;
+  padding: 10% 0;
   text-align: center;
 }
 section {
   min-height: 50px;
 }
 
-section h3 {
+section h3, #project_container h3 {
   display: block;
   width: 100%;
   text-align: center;
@@ -145,16 +154,34 @@ section h3 {
   padding: 2em 0;
   color: #333;
 }
-section:nth-child(even) {
-  background: #eee;
-}
-section:nth-child(even) .title {
-  font-size: 2em;
-  color: #111;
-}
+
 #hero {
-  margin-top: 100px;
+  padding-top: 10%;
   text-align: left;
+  background: url('../images/@christianperner.jpg') center 20% no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+}
+@keyframes heroContainerSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(3000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#hero .container{
+  padding: 5% 0 10% 0;
+  background: rgba(17,17,17,.9);
+  -webkit-clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+  animation: heroContainerSlideIn 1s;
+  transition: all ease-in-out 0.3s;
 }
 @keyframes heroH2SlideIn {
   from {
@@ -170,7 +197,9 @@ section:nth-child(even) .title {
   text-align: left;
   font-size: 2.5em;
   padding: 0 10%;
-  animation: heroH2SlideIn 1s;
+  font-weight: 300;
+  color: #fff;
+  animation: heroH2SlideIn 1.5s;
 }
 #about_wrap {
   padding: 0 5%;
@@ -193,7 +222,7 @@ section:nth-child(even) .title {
   height: auto;
   border-radius: 2%;
   filter: saturate(150%);
-  animation: heroImgSlide 1s;
+  animation: heroImgSlide 1.5s;
 }
 @keyframes heroPSlideIn {
   from {
@@ -215,20 +244,10 @@ section:nth-child(even) .title {
   margin-top: 0;
   padding: 0 5%;
   text-align: left;
-  animation: heroPSlideIn 1s;
+  font-weight: 300;
+  animation: heroPSlideIn 1.75s;
 }
 
-@keyframes skillsSlideIn {
-  from {
-    transform: translateY(-3000px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-#skills_section {
-  animation: skillsSlideIn 1s;
-}
 section h2{
   padding: 0 5%;
   color: #333;
@@ -276,7 +295,21 @@ section h2{
   margin-right: 0;
 }
 #project_container {
-  margin-bottom: 40px;
+  color: #fff;
+  padding: 10% 0;
+  background: url('../images/@samuelzeller.jpg') center center no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 10%, 100% 0, 100% 80%, 0 100%);
+}
+#project_container h2{
+  color: #fff;
+}
+#project_container .container{
+  padding: 15% 0;
+  background: rgba(17,17,17,.9);
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
 }
 .project_wrap {
   text-align: left;
@@ -285,29 +318,28 @@ section h2{
   width: calc(46% - 4px);
   margin-right: 2%;
 }
+.project_wrap h1{
+  color: #fff;
+}
 .project_wrap:first-child {
   margin-top: 0;
 }
 .project_wrap a {
-  color: #111;
+  color: #fff;
 }
 .project_header {
   display: block;
   width: 100%;
   height: auto;
-  box-shadow: 2px 2px 5px #9f9f9f;
+  box-shadow: 2px 2px 5px #333;
   -webkit-transition: all 0.15s;
   -moz-transition: all 0.15s;
   -o-transition: all 0.15s;
   transition: all 0.15s;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
   transition: all ease-in-out 0.3s;
 }
 .project_header:hover {
-  box-shadow: 5px 5px 10px #777;
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
+  box-shadow: 5px 5px 10px #333;
   transition: all ease-in-out 0.15s;
 }
 #contact_methods {
@@ -337,15 +369,13 @@ section h2{
   section {
     display: block;
     margin: 0 auto;
-    margin-top: 130px;
     min-height: 200px;
-    width: 90%;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 0 5%;
+    width: 100%;
     text-align: center;
   }
-  #hero {
-    margin-top: 11%;
+  #hero{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   }
   #hero p {
     font-size: 1.25em;
@@ -370,6 +400,10 @@ section h2{
   .skill {
     font-size: 1em;
   }
+  #project_container{
+    -webkit-clip-path: polygon(0 5%, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -383,11 +417,16 @@ section h2{
   section {
     margin: 0 auto;
     width: 100%;
-    padding: 2em 0;
+    padding: 20% 0;
     font-size: 1.5em;
   }
-  #hero {
-    margin-top: 2em;
+  #hero{
+    padding-top: 8%;
+  }
+  #hero .container{
+    padding: 10% 3% 15% 3%;
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 10%, 100% 85%, 0 100%);
   }
   #hero img {
     display: block;
@@ -411,6 +450,11 @@ section h2{
   .skill_container {
     width: calc(33% - 4px);
   }
+  #project_container .container{
+    padding: 20% 3%;
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -428,7 +472,7 @@ section h2{
     font-size: 1.75em;
   }
   #hero img {
-    display: block;
+    display: none;
     width: 50%;
     float: left;
     height: auto;
@@ -490,17 +534,19 @@ section h2{
     margin: 0 auto;
     width: 94%;
     padding: 3%;
-    margin-top: 10%;
     font-size: 1.1em;
   }
-  #hero {
+  #hero .container{
     margin-top: 20%;
+    padding: 10% 3% 15% 3%;
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
   }
   #hero h2 {
     font-size: 1.35em;
   }
   #hero img {
-    display: block;
+    display: none;
     width: 70%;
     float: none;
     height: auto;
@@ -525,7 +571,14 @@ section h2{
     font-size: 0.8em;
   }
   #project_container {
+    width: 96%;
+    padding: 0 2%;
     margin-bottom: 20px;
+  }
+  #project_container .container{
+    padding: 25% 3%;
+    -webkit-clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
   }
   .project_wrap {
     float: none;
