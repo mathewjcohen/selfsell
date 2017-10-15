@@ -265,6 +265,10 @@ section h2{
   color: #fff;
   border: 0px;
 }
+.skills_blurb{
+  padding: 0 10%;
+  font-size: 1.25em;
+}
 .skill {
   font-size: 1rem;
   border: 1px solid #333;
