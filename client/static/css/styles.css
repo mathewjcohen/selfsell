@@ -160,7 +160,7 @@ section h3, #project_container h3 {
 #hero {
   padding-top: 10%;
   text-align: left;
-  background: fixed url('../images/@samuelzeller.jpg') center 20% no-repeat;
+  background: fixed url('../images/_samuelzeller.webp') center 20% no-repeat;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
@@ -303,7 +303,7 @@ section h2{
 #project_container {
   color: white;
   padding: 10% 0;
-  background: fixed url('../images/@christianperner.jpg') center center no-repeat;
+  background: fixed url('../images/_christianperner.webp') center center no-repeat;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
   clip-path: polygon(0 10%, 100% 0, 100% 80%, 0 100%);

@@ -1,10 +1,11 @@
-// this snippet should be in: >ProjectDir/server.js
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
 
+app.use(compression());
 app.use(express.static(__dirname + "/client/static"));
 
 app.set("views", path.join(__dirname, "./client/views"));
