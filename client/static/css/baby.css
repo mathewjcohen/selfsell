@@ -1,0 +1,90 @@
+body {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+}
+strong {
+  font-weight: 400;
+}
+h1 {
+  font-size: 5em;
+}
+h3 {
+  font-size: 2em;
+}
+.anchor {
+  display: inline-block;
+  width: auto;
+  border: 1px solid #059cd1;
+  color: #059cd1;
+  background: white;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 1em 0.5em;
+  margin: 1em 0;
+  filter: drop-shadow(5px 5px 5px #666);
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.anchor:hover {
+  border: 1px solid #059cd1;
+  color: white;
+  background: #059cd1;
+  border-radius: 3px;
+  filter: drop-shadow(0px 0px 0px #fff);
+}
+
+section {
+  font-size: 5em;
+  margin: 0 auto;
+  width: 100%;
+  /* max-width: 100%; */
+  padding-bottom: 1em;
+  margin-top: 1em;
+  border-bottom: 1px solid #cdcdcd;
+}
+.main {
+  text-align: center;
+}
+.section-title {
+  display: block;
+  text-align: left;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.header-images {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  filter: opacity(70%);
+  border: 0;
+}
+.header-img {
+  margin: 0 1em;
+}
+
+.app-store {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+@media screen and (min-width: 750px) {
+  h1 {
+    font-size: 3em;
+  }
+  section {
+    font-size: 1.5em;
+    width: 80%;
+  }
+  .app-store {
+    display: block;
+    width: 5em;
+    height: auto;
+  }
+}
