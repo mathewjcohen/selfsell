@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Useful things...?</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/css/tools.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tools</h1>
+      <ul>
+        <li>JS CNC Gcode Facing Generator</li>
+      </ul>
+    </header>
+    <section id="jsGcodeFacing">
+      <strong>JS CNC Gcode Facing Generator</strong>
+      <p>
+        A tool for generating XY values for facing stock in my CNC machine based
+        on X home being the middle of X travel (machine can move X-/X+ the same
+        amount).
+      </p>
+      <div class="jsGcodeFacing">
+        <div>
+          <p>Input:</p>
+          Cutting Direction:
+          <select id="jsGcodeFacingDir">
+            <option>X</option>
+            <option>Y</option>
+          </select>
+          Bit diameter
+          <input
+            type="number"
+            id="jsGcodeFacingBit"
+            min="1"
+            max="100"
+            value="25"
+          />
+          Feedrate (mm/s)
+          <input
+            type="number"
+            id="jsGcodeFacingFeedrate"
+            min="1"
+            max="2000"
+            value="1400"
+          />
+          Stock Width in mm
+          <input
+            type="number"
+            id="jsGcodeFacingWidth"
+            min="1"
+            max="1000"
+            value="440"
+          />
+          Stock Length in mm
+          <input
+            type="number"
+            id="jsGcodeFacingLength"
+            min="1"
+            max="1000"
+            value="500"
+          />
+          <button id="jsGcodeFacingBtn">Generate</button>
+        </div>
+        <div>
+          <p>Output:</p>
+          <p id="jsGcodeFacingOutput">
+            <span>Gcode output</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="js/tools.js"></script>
+  </body>
+</html>
