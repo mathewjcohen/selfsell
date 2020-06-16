@@ -1,74 +1,82 @@
-// grab inputs and buttons
-const jsGcodeFacingDir = document.getElementById("jsGcodeFacingDir");
-const jsGcodeFacingBit = document.getElementById("jsGcodeFacingBit");
-const jsGcodeFacingFeedrate = document.getElementById("jsGcodeFacingFeedrate");
-const jsGcodeFacingWidth = document.getElementById("jsGcodeFacingWidth");
-const jsGcodeFacingLength = document.getElementById("jsGcodeFacingLength");
-const jsGcodeFacingOutput = document.getElementById("jsGcodeFacingOutput");
-const jsGcodeFacingBtn = document
-  .getElementById("jsGcodeFacingBtn")
-  .addEventListener("click", function() {
-    if (jsGcodeFacingLength.value && jsGcodeFacingWidth.value) {
-      // jsGcodeFacingOutput.innerHTML = generateGcode();
-      alert(`${generateGcode()}`);
+(function() {
+  // grab inputs and buttons
+  let jsGcodeFacingDir = document.getElementById("jsGcodeFacingDir").value;
+  document
+    .getElementById("jsGcodeFacingDir")
+    .addEventListener("change", function() {
+      jsGcodeFacingDir = document.getElementById("jsGcodeFacingDir").value;
+    });
+  const jsGcodeFacingBit = document.getElementById("jsGcodeFacingBit").value;
+  const jsGcodeFacingFeedrate = document.getElementById("jsGcodeFacingFeedrate")
+    .value;
+  const jsGcodeFacingWidth = document.getElementById("jsGcodeFacingWidth")
+    .value;
+  const jsGcodeFacingLength = document.getElementById("jsGcodeFacingLength")
+    .value;
+  const jsGcodeFacingOutput = document.getElementById("jsGcodeFacingOutput");
+  document
+    .getElementById("jsGcodeFacingBtn")
+    .addEventListener("click", function() {
+      if (jsGcodeFacingLength && jsGcodeFacingWidth) {
+        prepGcodeForMarkup();
+      } else {
+        alert("error");
+      }
+    });
+
+  function homeXY() {
+    const halfXwidth = jsGcodeFacingWidth / 2;
+    return [`G0 X-${halfXwidth}`, "G0 Y0"];
+  }
+
+  function prepGcodeForMarkup() {
+    jsGcodeFacingOutput.innerHTML = "";
+    generateGcode().forEach(line => {
+      let p = document.createElement("p");
+      p.innerHTML = `${line}`;
+      jsGcodeFacingOutput.appendChild(p);
+    });
+  }
+
+  function generateGcode() {
+    let output = [];
+    if (jsGcodeFacingDir == "X") {
+      output.push(...xTravelCut());
     } else {
-      alert("error");
+      output.push(...yTravelCut());
     }
-  });
-
-function homeXY() {
-  const halfXwidth = jsGcodeFacingWidth / 2;
-  return [`G0 X-${halfXwidth}`, "G0 Y0"];
-}
-
-function generateGcode() {
-  let p = 0;
-  let fr = jsGcodeFacingFeedrate;
-  let output = [];
-  if (jsGcodeFacingDir.value == "X") {
-    let dirTravel = jsGcodeFacingWidth / 2;
     output.push(...homeXY());
-    alert(output);
-    output.push(xTravel(dirTravel, fr, false));
-    p += jsGcodeFacingBit; // advance diamter of bit for Y
-    output.push(yTravel(p, fr, false));
-    output.push(xTravel(dirTravel, fr, true));
-    p += jsGcodeFacingBit; // advance diamter of bit for Y
-    alert(output);
-    alert(p);
-    while (p < jsGcodeFacingLength.value) {
-      output.push(xTravel(dirTravel, fr, false));
-      p += jsGcodeFacingBit; // advance diamter of bit for Y
-      output.push(yTravel(p, fr, false));
-      output.push(xTravel(dirTravel, fr, true));
-      p += jsGcodeFacingBit; // advance diamter of bit for Y
-      alert(output);
-    }
-  } else {
-    let dirTravel = jsGcodeFacingLength / 2;
-    while (p < jsGcodeFacingWidth.value) {
-      output.push(yTravel(dirTravel, fr, false));
-      p += jsGcodeFacingBit; // advance diamter of bit for Y
-      output.push(xTravel(p, fr, false));
-      output.push(yTravel(dirTravel, fr, true));
-      p += jsGcodeFacingBit; // advance diamter of bit for Y
-      alert(output);
-    }
+    return output;
   }
-  output.push(...homeXY());
-  console.log(output.join("&#13;"));
-  // return output.join("&#13;");
-}
 
-function xTravel(amount, fr, neg) {
-  if (neg === false) {
-    return `G0 X${amount} F${fr}`;
+  function xTravelCut() {
+    let p = 0;
+    let fr = jsGcodeFacingFeedrate;
+    let output = [];
+    const halfXwidth = jsGcodeFacingWidth / 2;
+    while (p < jsGcodeFacingLength) {
+      output.push(`G0 X${halfXwidth} F${fr}`); // move to X pos
+      p += parseInt(jsGcodeFacingBit); // set new Y pos
+      output.push(`G0 Y${p} F${fr}`); // move to new Y pos
+      output.push(`G0 X-${halfXwidth} F${fr}`); // move to X pos
+      p += parseInt(jsGcodeFacingBit); // set new Y pos
+      output.push(`G0 Y${p} F${fr}`); // move to new Y pos
+    }
+    return output;
   }
-  return `G0 X-${amount} F${fr}`;
-}
-function yTravel(amount, fr, neg) {
-  if (neg === false) {
-    return `G0 Y${amount} F${fr}`;
+
+  function yTravelCut() {
+    let p = (jsGcodeFacingWidth / 2) * -1;
+    let fr = jsGcodeFacingFeedrate;
+    let output = [];
+    while (p < jsGcodeFacingWidth) {
+      output.push(`G0 Y${jsGcodeFacingLength} F${fr}`); // move Y pos end
+      p += parseInt(jsGcodeFacingBit); // set new X pos
+      output.push(`G0 X${p} F${fr}`); // move to new X pos
+      output.push(`G0 Y0 F${fr}`); // move to Y start
+      p += parseInt(jsGcodeFacingBit); // set new X pos
+      output.push(`G0 X${p} F${fr}`); // move to new X pos
+    }
+    return output;
   }
-  return `G0 Y-${amount} F${fr}`;
-}
+})();

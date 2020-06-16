@@ -11,6 +11,14 @@ body {
   background: white;
   -webkit-font-smoothing: antialiased;
 }
+a {
+  color: #059cd1;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+a:hover {
+  color: #cdcdcd;
+}
 strong {
   font-weight: bold;
 }
@@ -62,6 +70,9 @@ section {
   h1 {
     font-size: 2.25em;
   }
+  h1 > a {
+    color: rgba(0, 0, 0, 0.7);
+  }
   ul,
   li {
     font-size: 0.9em;
@@ -84,7 +95,7 @@ section {
     font-size: 0.9em;
     color: #059cd1;
     background: white;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
     cursor: pointer;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
   }
@@ -98,6 +109,10 @@ section {
     font-size: 1.5em;
     width: 80%;
   }
+  small {
+    font-size: 0.5em;
+    color: #666;
+  }
   .jsGcodeFacing {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -106,6 +121,10 @@ section {
     border-right: 1px solid #cdcdcd;
     margin-right: 1em;
     padding: 0.5em;
+  }
+  .jsGcodeFacing p {
+    font-size: 0.5em;
+    line-height: normal;
   }
   #jsGcodeFacingOutput {
     border: 1px solid #cdcdcd;
