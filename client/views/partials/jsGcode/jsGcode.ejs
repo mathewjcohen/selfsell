@@ -1,0 +1,63 @@
+<p>
+  <strong>JS CNC Gcode Facing Generator</strong>
+</p>
+<p>
+  <small>
+    A tool for generating XY values for facing stock in my CNC machine based on
+    X home being the middle of X travel (machine can move X-/X+ the same
+    amount).
+  </small>
+</p>
+<div class="jsGcodeFacing">
+  <div>
+    <p>Input:</p>
+    <p>
+      Cutting Direction:
+      <select id="jsGcodeFacingDir">
+        <option>X</option>
+        <option>Y</option>
+      </select>
+    </p>
+    <p>
+      Bit diameter
+      <input type="number" id="jsGcodeFacingBit" min="1" max="100" value="25" />
+    </p>
+    <p>
+      Feedrate (mm/s)
+      <input
+        type="number"
+        id="jsGcodeFacingFeedrate"
+        min="1"
+        max="2000"
+        value="1400"
+      />
+    </p>
+    <p>
+      Stock Width in mm
+      <input
+        type="number"
+        id="jsGcodeFacingWidth"
+        min="1"
+        max="1000"
+        value="440"
+      />
+    </p>
+    <p>
+      Stock Length in mm
+      <input
+        type="number"
+        id="jsGcodeFacingLength"
+        min="1"
+        max="1000"
+        value="500"
+      />
+    </p>
+    <button id="jsGcodeFacingBtn">Generate</button>
+  </div>
+  <div>
+    <p>Output:</p>
+    <p id="jsGcodeFacingOutput">
+      <span>Gcode output</span>
+    </p>
+  </div>
+</div>
