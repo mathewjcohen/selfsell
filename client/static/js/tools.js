@@ -67,9 +67,15 @@ function xTravelCut() {
   while (p < jsGcodeFacingLength) {
     output.push(`G0 X${halfXwidth} F${fr}`); // move to X pos
     p += parseInt(jsGcodeFacingBit); // set new Y pos
+    if (p > jsGcodeFacingWidth) {
+      return output;
+    }
     output.push(`G0 Y${p} F${fr}`); // move to new Y pos
     output.push(`G0 X-${halfXwidth} F${fr}`); // move to X pos
     p += parseInt(jsGcodeFacingBit); // set new Y pos
+    if (p > jsGcodeFacingWidth) {
+      return output;
+    }
     output.push(`G0 Y${p} F${fr}`); // move to new Y pos
   }
   return output;
@@ -80,12 +86,18 @@ function yTravelCut() {
   let p = (jsGcodeFacingWidth / 2) * -1;
   let fr = jsGcodeFacingFeedrate;
   let output = [];
-  while (p < jsGcodeFacingWidth) {
+  while (p <= jsGcodeFacingWidth) {
     output.push(`G0 Y${jsGcodeFacingLength} F${fr}`); // move Y pos end
     p += parseInt(jsGcodeFacingBit); // set new X pos
+    if (p > jsGcodeFacingWidth) {
+      return output;
+    }
     output.push(`G0 X${p} F${fr}`); // move to new X pos
     output.push(`G0 Y0 F${fr}`); // move to Y start
     p += parseInt(jsGcodeFacingBit); // set new X pos
+    if (p > jsGcodeFacingWidth) {
+      return output;
+    }
     output.push(`G0 X${p} F${fr}`); // move to new X pos
   }
   return output;
