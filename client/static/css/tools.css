@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -82,12 +90,15 @@ section {
   }
   select,
   input {
-    width: 50%;
-    padding: 1em;
+    width: 100%;
+    padding: 0.25em;
     font-size: 1rem;
+    border: 1px solid #059cd1;
+    -moz-appearance: none;
+    -webkit-appearance: none;
   }
   button {
-    width: 50%;
+    width: 100%;
     padding: 0.5em 1em;
     border: 1px solid #059cd1;
     border-radius: 15px;
@@ -115,7 +126,7 @@ section {
   }
   .jsGcodeFacing {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: 33% 66%;
   }
   .jsGcodeFacing > div:nth-child(1) {
     border-right: 1px solid #cdcdcd;
