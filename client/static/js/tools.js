@@ -66,16 +66,14 @@ function xTravelCut() {
   while (p < jsGcodeFacingLength) {
     output.push(`G0 X${halfXwidth}`); // move to X pos
     p += parseInt(jsGcodeFacingBit); // set new Y pos
-    if (p > jsGcodeFacingWidth) {
-      return output;
-    }
     output.push(`G0 Y${p}`); // move to new Y pos
     output.push(`G0 X-${halfXwidth}`); // move to X pos
     p += parseInt(jsGcodeFacingBit); // set new Y pos
-    if (p > jsGcodeFacingWidth) {
+    output.push(`G0 Y${p}`); // move to new Y pos
+    if (p > jsGcodeFacingLength) {
+      // exit if at end of material
       return output;
     }
-    output.push(`G0 Y${p}`); // move to new Y pos
   }
   return output;
 }
@@ -84,19 +82,19 @@ function xTravelCut() {
 function yTravelCut() {
   let p = (jsGcodeFacingWidth / 2) * -1;
   let output = [];
-  while (p <= jsGcodeFacingWidth) {
+  let currentPos = 0;
+  while (p < jsGcodeFacingWidth / 2) {
     output.push(`G0 Y${jsGcodeFacingLength}`); // move Y pos end
     p += parseInt(jsGcodeFacingBit); // set new X pos
-    if (p > jsGcodeFacingWidth) {
-      return output;
-    }
     output.push(`G0 X${p}`); // move to new X pos
     output.push(`G0 Y0`); // move to Y start
     p += parseInt(jsGcodeFacingBit); // set new X pos
-    if (p > jsGcodeFacingWidth) {
+    output.push(`G0 X${p}`); // move to new X pos
+    if (p > jsGcodeFacingWidth / 2) {
+      output.push(`G0 Y${jsGcodeFacingLength}`); // move Y pos end
+      // and exit if at end of material
       return output;
     }
-    output.push(`G0 X${p}`); // move to new X pos
   }
   return output;
 }
