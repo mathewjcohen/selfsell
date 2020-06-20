@@ -57,9 +57,8 @@ function homeXY() {
 function formatGcodeForMarkup() {
   jsGcodeFacingOutput.innerHTML = "";
   generateGcode().forEach(line => {
-    let p = document.createElement("p");
-    p.innerHTML = `${line}`;
-    jsGcodeFacingOutput.appendChild(p);
+    jsGcodeFacingOutput.innerHTML += `${line}`;
+    jsGcodeFacingOutput.innerHTML += "\n";
   });
 }
 
