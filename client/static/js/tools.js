@@ -8,11 +8,28 @@
 
 // grab inputs and buttons
 let jsGcodeFacingDir = document.getElementById("jsGcodeFacingDir").value;
-const jsGcodeFacingBit = document.getElementById("jsGcodeFacingBit").value;
-const jsGcodeFacingWidth = document.getElementById("jsGcodeFacingWidth").value;
-const jsGcodeFacingLength = document.getElementById("jsGcodeFacingLength")
-  .value;
-const jsGcodeFacingOutput = document.getElementById("jsGcodeFacingOutput");
+let jsGcodeFacingBit = document.getElementById("jsGcodeFacingBit").value;
+let jsGcodeFacingWidth = document.getElementById("jsGcodeFacingWidth").value;
+let jsGcodeFacingLength = document.getElementById("jsGcodeFacingLength").value;
+let jsGcodeFacingOutput = document.getElementById("jsGcodeFacingOutput");
+
+function updateVals(el) {
+  switch (el.id) {
+    case "jsGcodeFacingDir":
+      jsGcodeFacingDir = document.getElementById("jsGcodeFacingDir").value;
+      break;
+    case "jsGcodeFacingBit":
+      jsGcodeFacingBit = document.getElementById("jsGcodeFacingBit").value;
+      break;
+    case "jsGcodeFacingWidth":
+      jsGcodeFacingWidth = document.getElementById("jsGcodeFacingWidth").value;
+      break;
+    case "jsGcodeFacingLength":
+      jsGcodeFacingLength = document.getElementById("jsGcodeFacingLength")
+        .value;
+      break;
+  }
+}
 
 document
   .getElementById("jsGcodeFacingDir")
@@ -82,7 +99,6 @@ function xTravelCut() {
 function yTravelCut() {
   let p = (jsGcodeFacingWidth / 2) * -1;
   let output = [];
-  let currentPos = 0;
   while (p < jsGcodeFacingWidth / 2) {
     output.push(`G0 Y${jsGcodeFacingLength}`); // move Y pos end
     p += parseInt(jsGcodeFacingBit); // set new X pos
