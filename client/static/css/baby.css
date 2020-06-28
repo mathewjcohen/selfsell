@@ -62,6 +62,21 @@ section {
   font-weight: bold;
   color: #059cd1;
 }
+section a {
+  text-decoration: none;
+  color: #059cd1;
+  transition: all 0.3s ease-in-out;
+}
+section a:hover {
+  font-size: 1.1em;
+}
+.virtual-join {
+  text-align: center;
+  text-decoration: none;
+  font-size: 3em;
+  color: #059cd1;
+}
+
 .header-images {
   display: flex;
   justify-content: center;
