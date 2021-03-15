@@ -8,7 +8,7 @@
     amount).
   </small>
 </p>
-<div class="jsGcodeFacing">
+<div class="gridContainer">
   <div>
     <div>Input:</div>
     <p>
@@ -21,6 +21,7 @@
     <p>
       Bit diameter (mm)
       <input
+        class="textInput"
         type="number"
         id="jsGcodeFacingBit"
         min="1"
@@ -34,6 +35,7 @@
     <p>
       Stock Width (mm)
       <input
+        class="textInput"
         type="number"
         id="jsGcodeFacingWidth"
         min="1"
@@ -47,6 +49,7 @@
     <p>
       Stock Length (mm)
       <input
+        class="textInput"
         type="number"
         id="jsGcodeFacingLength"
         min="1"
@@ -56,12 +59,12 @@
         pattern="[0-9]+"
         onkeyup="updateVals(this)"
       />
+      <button id="jsGcodeFacingBtn">Generate</button>
     </p>
-    <button id="jsGcodeFacingBtn">Generate</button>
   </div>
   <div>
     <p>
-      Output:
+      Output (click to copy):
     </p>
     <textarea
       id="jsGcodeFacingOutput"
@@ -72,3 +75,4 @@
     ></textarea>
   </div>
 </div>
+<%- include ../backToTop.ejs %>

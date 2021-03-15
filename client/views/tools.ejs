@@ -6,14 +6,22 @@
     <link rel="stylesheet" href="/css/tools.css" />
   </head>
   <body>
-    <header>
+    <header name="top">
       <h1><a href="/tools">Tools</a></h1>
       <ul>
         <li><a href="#jsGcodeFacing">JS CNC Gcode Facing Generator</a></li>
+        <li><a href="#checklist">Task List</a></li>
+        <li><a href="#inventoryTracker">Inventory Tracker</a></li>
       </ul>
     </header>
     <section id="jsGcodeFacing">
       <%- include partials/jsGcode/jsGcode.ejs %>
+    </section>
+    <section id="checklist">
+      <%- include partials/checklist/checklist.ejs %>
+    </section>
+    <section id="inventoryTracker">
+      <%- include partials/inventory/tracker.ejs %>
     </section>
     <script src="js/tools.js"></script>
     <script src="js/site.js"></script>

@@ -34,7 +34,7 @@ h1 {
   font-size: 5em;
 }
 select,
-input {
+.textInput {
   display: block;
 }
 textarea {
@@ -50,6 +50,11 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+button {
+  display: inline-block;
+  max-width: 50%;
+  transform: translateX(50%);
 }
 
 header,
@@ -69,7 +74,8 @@ section {
   width: 100%;
   padding: 0.5em;
 }
-#jsGcodeFacingOutput {
+#jsGcodeFacingOutput,
+#checklistOutput {
   width: 100%;
   border: 1px solid #cdcdcd;
   border-width: 1px 0 0 1px;
@@ -78,6 +84,19 @@ section {
 #jsGcodeFacingOutput span {
   font-size: 1em;
   color: #cdcdcd;
+}
+
+.checkbox {
+  margin-right: 1rem;
+}
+.checklistCheckbox {
+  display: inline-block;
+}
+.checklistItem {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 @media screen and (min-width: 750px) {
@@ -105,7 +124,8 @@ section {
     -webkit-appearance: none;
   }
   button {
-    width: 100%;
+    width: 50%;
+    transform: translateX(50%);
     padding: 0.5em 1em;
     border: 1px solid #059cd1;
     border-radius: 15px;
@@ -116,6 +136,7 @@ section {
     transition: all 0.25s ease-in-out;
     cursor: pointer;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+    outline: none;
   }
   button:hover {
     background: #059cd1;
@@ -131,14 +152,14 @@ section {
     font-size: 0.5em;
     color: #666;
   }
-  .jsGcodeFacing {
+  .gridContainer {
     display: grid;
     grid-template-columns: 33% 66%;
   }
-  .jsGcodeFacing > div:nth-child(1) {
+  .gridContainer > div:nth-child(1) {
     padding: 0.5em;
   }
-  .jsGcodeFacing p {
+  .gridContainer p {
     font-size: 0.5em;
     line-height: normal;
   }
@@ -151,4 +172,10 @@ section {
     font-size: 1em;
     color: #cdcdcd;
   }
+}
+
+.backToTop {
+  margin-top: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
 }

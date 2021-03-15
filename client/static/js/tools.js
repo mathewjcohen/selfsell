@@ -47,6 +47,13 @@ document
     }
   });
 
+document
+  .getElementById("jsGcodeFacingOutput")
+  .addEventListener("click", function() {
+    jsGcodeFacingOutput.select();
+    document.execCommand("copy");
+  });
+
 // set to prefered home coords
 function homeXY() {
   const halfXwidth = jsGcodeFacingWidth / 2;
@@ -112,4 +119,29 @@ function yTravelCut() {
     }
   }
   return output;
+}
+
+// *************************************************************************
+// checklist functionality
+// *************************************************************************
+
+let checklistInput = document.getElementById("checklistInput");
+let checklistInputValue;
+let checklistOutput = document.getElementById("checklistOutput");
+let checklistAddButton = document.getElementById("checklistAddButton");
+
+checklistInput.addEventListener("change", function() {
+  checklistInputValue = checklistInput.value;
+});
+checklistAddButton.addEventListener("click", function() {
+  // let item = document.createElement("div");
+  addChecklistItem(checklistInputValue);
+});
+
+function addChecklistItem(val) {
+  let div = document.createElement("div");
+  div.className = "checklistItem";
+  div.innerText = val;
+
+  checklistOutput.appendChild(div);
 }
