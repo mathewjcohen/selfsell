@@ -4,4 +4,4 @@ This is just a repo for my personal site containing a bit of info about myself, 
 
 ## Run Local
 
-`npm run start`
+`nodemon --exec npm start`
